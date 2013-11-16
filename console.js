@@ -11,27 +11,27 @@ var secondes = d.getSeconds(); // Retourne la seconde entre 0-59
 // Vérifie que le jour, le mois, l'heure,la minute et la seconde possède au moins 2 digits
 
 if(jour<9) {
-	jour = "0"+jour;
+  jour = "0"+jour;
 }
 if(mois<9) {
-	mois = "0"+mois;
+  mois = "0"+mois;
 }
 if(heure<9) {
-	heure = "0"+heure;
+  heure = "0"+heure;
 }
 if(minutes<9) {
-	minutes = "0"+minutes;
+  minutes = "0"+minutes;
 }
 if(secondes<9) {
-	secondes = "0"+secondes;
+  secondes = "0"+secondes;
 }
 
 var date = jour+"/"+mois+"/"+annee+" - "+heure+":"+minutes+":"+secondes+" --"; // Chaine de caractère au format "dd/mm/yyyy - hh:mm:ss --"
 
 console.log = function() {
-	var args = Array.prototype.slice.call(arguments);
-	args.unshift(date);
-	oldLog.apply(console,args);
+  var args = Array.prototype.slice.call(arguments);
+  args.unshift(date);
+  oldLog.apply(console,args);
 };
 
 module.exports = console;

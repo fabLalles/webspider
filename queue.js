@@ -1,21 +1,21 @@
 function queue(){
-        this.queueUrl=[]; // File d'url
+  this.queueUrl=[]; // File d'url
 };
 
 queue.prototype={
-		// Ajoute à la fin du tableau l'url trouvé
-		push:function(url){
-			this.queueUrl.push(url);
-		},
-		// Supprime le 1er url du tableau et le retourne 
-		shift:function(){
-			if(this.queueUrl.length == 0) { // Pour le cas où le tableau est vide
-				return undefined;
-			}
-			var url = this.queueUrl[0];
-			this.queueUrl.shift();
-			return url;
-		}
+  // Ajoute à la fin du tableau l'url trouvé
+  push:function(url){
+    this.queueUrl.push(url);
+  },
+  // Supprime le 1er url du tableau et le retourne 
+  shift:function(){
+    if(this.queueUrl.length == 0) { // Pour le cas où le tableau est vide
+      return undefined;
+    }
+    var url = this.queueUrl[0];
+    this.queueUrl.shift();
+    return url;
+  }
 };
 
 module.exports = new queue();
